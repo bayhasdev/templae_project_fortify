@@ -20,7 +20,7 @@
     <link href="{{ url('assets/bootstrap5/css/signin.css') }}" rel="stylesheet">
 </head>
 
-<body class="text-center">
+<body class="text-center"  dir="rtl">
 
     <main class="form-signin">
         <form action="{{ route('register') }}" method="POST">
