@@ -1,0 +1,38 @@
+//////// run laravel project ////////
+
+Create copy of .env.example with name .env and update this file with your MySQL Connection credentilas
+After that run following command:
+1- php artisan key:generate
+2- php artisan config:cache
+3- composer dump-autoload or composer update 
+4- $ php artisan migrate
+5- $ php artisan storage:link 
+
+Now Run your project with following command 
+php artisan serve --host 0.0.0.0 --port 8000
+
+===========================================================================================
+
+ //////// package installed ////////
+
+- fortify
+
+- Laravel IDE Helper Generator :
+    ref: https://github.com/barryvdh/laravel-ide-helper
+
+- Laravel Debugbar :
+    ref: https://github.com/barryvdh/laravel-debugbar
+
+
+===========================================================================================
+
+ //////// useful package not installed in this project  ////////
+- laravel-query-detector 
+    ref : https://github.com/beyondcode/laravel-query-detector
+
+- spatie/laravel-backup 
+    ref : https://github.com/spatie/laravel-backup
+
+- Astrotomic/laravel-translatable 
+    ref : https://github.com/Astrotomic/laravel-translatable
+
