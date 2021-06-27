@@ -1,10 +1,10 @@
 @section('sidebar_menu')
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
         <div class="position-sticky pt-3">
             <ul class="nav flex-column">
+                <x-dashboard.sidebar_menu_item isActive="{{ AppHelpers::isCurrentUrl('dashboard.home') ? 'active' : '' }}"
+                    url="{{ route('dashboard.home') }}" title="الرئيسية" featherIcon='home' />
 
-                <x-dashboard.sidebar_menu_item isActive="{{ isCurrentUrlActive('dashboard') }}" url="#"
-                    title="الرئيسية" featherIcon='home' />
 
 
                 {{-- DropDown menu Items start --}}

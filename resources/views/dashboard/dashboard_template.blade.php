@@ -8,8 +8,8 @@
 @stop
 
 @section('sidebar_menu_extra_item')
-    <x-dashboard.sidebar_menu_item isActive="{{ isCurrentUrlActive('dashboard') }}" url="#" title="رابط اضافي"
-        featherIcon='plus' />
+    <x-dashboard.sidebar_menu_item isActive="{{ AppHelpers::isCurrentUrl('dashboard.home') ? 'active' : '' }}" url="#"
+        title="رابط اضافي" featherIcon='plus' />
 @endsection
 
 @section('content')
@@ -27,7 +27,7 @@
             </button>
         </div>
     </div>
-  
+
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
@@ -46,7 +46,7 @@
                     <td>عشوائية</td>
                     <td>تثري</td>
                     <td>الجدول</td>
-                </tr> 
+                </tr>
             </tbody>
         </table>
     </div>

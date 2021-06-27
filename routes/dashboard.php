@@ -5,8 +5,14 @@ use Illuminate\Support\Facades\Route;
 /*-------------------------------------------------------------------------- 
 | dashboard Routes 
 --------------------------------------------------------------------------*/ 
+ 
 
-Route::get('dashboard', function () {
-    return view('dashboard.home');
-})->middleware('auth')->name('dashboard');
+Route::middleware('auth')->name('dashboard.')->prefix('dashboard')->group(function () {
+
+    Route::get('/', function () {
+        return view('dashboard.home');
+    })->name('home');
+
+    Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+});
  

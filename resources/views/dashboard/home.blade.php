@@ -2,17 +2,26 @@
 
 @section('title', 'الرئيسية')
 
+
 @section('custom_top_navbar')
-    <div style="color: white; width: 100%"></div>
-    <input class="form-control form-control-dark w-100" type="text" name="serach" placeholder="بحث" aria-label="بحث">
-    <button type="button" class="btn     rounded-sm"  >
-        <span data-feather="search" style="color: white "></span>
-    </button>
+
+    <div class="ps-2" style="  width: 100% ">
+        <a href="{{ route('dashboard.home') }}">لوحة التحكم </a> / الرئيسية
+    </div>
+
+    {{-- <form class="  w-50  " action="">
+        <input class="form-control form-control-dark" type="text" name="serach" placeholder="بحث" aria-label="بحث">
+    </form>
+    <button type="button" class="btn  rounded-sm">
+        <span data-feather="search" style="color: rgb(0, 0, 0) "></span>
+    </button> --}}
 @stop
 
 @section('sidebar_menu_extra_item')
-    <x-dashboard.sidebar_menu_item isActive="{{ isCurrentUrlActive('dashboard') }}" url="#" title="رابط اضافي"
-        featherIcon='plus' />
+
+    <x-dashboard.sidebar_menu_item isActive="{{ AppHelpers::isCurrentUrl('dashboard.home') ? 'active' : '' }}" url="#"
+        title="رابط اضافي" featherIcon='plus' />
+
 @endsection
 
 @section('content')

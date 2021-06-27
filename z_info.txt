@@ -19,6 +19,10 @@ php artisan serve --host 0.0.0.0 --port 8000
 
 - Laravel IDE Helper Generator :
     ref: https://github.com/barryvdh/laravel-ide-helper
+    commands:
+        php artisan ide-helper:generate - PHPDoc generation for Laravel Facades
+        php artisan ide-helper:models - PHPDocs for models
+        php artisan ide-helper:meta - PhpStorm Meta file
 
 - Laravel Debugbar :
     ref: https://github.com/barryvdh/laravel-debugbar
@@ -35,4 +39,22 @@ php artisan serve --host 0.0.0.0 --port 8000
 
 - Astrotomic/laravel-translatable 
     ref : https://github.com/Astrotomic/laravel-translatable
+
+
+
+===========================================================================================
+//////// useful tips  ////////
+
+- access php code and functions from blade file and anywhere:
+in composer.json add:
+    "autoload": {
+        "files":[
+            "app/Http/Helpers/helper.php"
+        ]
+    }
+After this just run command composer dump-autoload
+
+***************************
+
+
 
