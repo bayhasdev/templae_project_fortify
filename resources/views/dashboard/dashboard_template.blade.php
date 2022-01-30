@@ -28,26 +28,36 @@
         </div>
     </div>
 
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>عنوان</th>
-                    <th>عنوان</th>
-                    <th>عنوان</th>
-                    <th>عنوان</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1,001</td>
-                    <td>بيانات</td>
-                    <td>عشوائية</td>
-                    <td>تثري</td>
-                    <td>الجدول</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    @include('dashboard.layouts.messages.session_messages')
+
+    @if (count($data) == 0)
+        <div class="d-flex justify-content-center">
+            <x-image src="{{ url('assets/images/no_data_found.png') }}" alt="" height=" " />
+        </div>
+
+    @endif
+    @foreach ($data as $item)
+
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>عنوان</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    @endforeach
+
+
 @stop

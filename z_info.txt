@@ -15,7 +15,7 @@ php artisan serve --host 0.0.0.0 --port 8000
 
  //////// package installed ////////
 
-- fortify
+- fortify 
 
 - Laravel IDE Helper Generator :
     ref: https://github.com/barryvdh/laravel-ide-helper

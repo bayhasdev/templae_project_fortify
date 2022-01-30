@@ -2,12 +2,13 @@
 <html lang="ar" dir="rtl">
 
 <head>
+    <title>{{ config('app.name', 'App Coder') }} لوحة التحكم @yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="App Coder">
     <meta name="author" content="App Coder">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>{{ config('app.name', 'App Coder') }} لوحة التحكم @yield('title')</title>
+    <link rel="icon" href="{{ url('assets/images/logo.png') }}" style="width: 25;height: 25;">
 
     <!-- filepond  stylesheet-->
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
@@ -59,7 +60,8 @@
                     <a class="dropdown-item" href="#" onclick="  document.getElementById('logout-form').submit();">
                         تسجيل خروج
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf
+                    </form>
                 </li>
             </ul>
         </div>

@@ -5,5 +5,6 @@ namespace App\Helpers;
 
 class AppConstants
 {
-    const tempFolderPath =  'public/tmp/';
+    const DomainName =  'domain.com';
+    const TempFolderPath =  'public/tmp/';
 }

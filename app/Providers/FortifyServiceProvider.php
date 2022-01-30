@@ -31,35 +31,32 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Fortify::createUsersUsing(CreateNewUser::class);
+        // Fortify::createUsersUsing(CreateNewUser::class); 
+        // Fortify::registerView(function () {
+        //     return view('auth.register');
+        // });
+
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
-        RateLimiter::for('login', function (Request $request) {
-            return Limit::perMinute(5)->by($request->email . $request->ip());
-        });
-
-        RateLimiter::for('two-factor', function (Request $request) {
-            return Limit::perMinute(5)->by($request->session()->get('login.id'));
-        });
-
-
-        Fortify::loginView(function () {
-            return view('auth.login');
-        });
-
-        Fortify::registerView(function () {
-            return view('auth.register');
-        });
-
-        Fortify::requestPasswordResetLinkView(function(){
-            return view('auth.forgot-password');     
+        Fortify::requestPasswordResetLinkView(function () {
+            return view('auth.forgot-password');
         });
 
         Fortify::resetPasswordView(function ($request) {
             return view('auth.reset-password', ['token' => $request->token]);
         });
 
+        RateLimiter::for('login', function (Request $request) {
+            return Limit::perMinute(5)->by($request->email . $request->ip());
+        });
+        Fortify::loginView(function () {
+            return view('auth.login');
+        });
+
+        RateLimiter::for('two-factor', function (Request $request) {
+            return Limit::perMinute(5)->by($request->session()->get('login.id'));
+        });
     }
 }
