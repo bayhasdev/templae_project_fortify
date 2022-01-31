@@ -234,6 +234,7 @@ return [
 
         'AppHelpers' => App\Helpers\AppHelpers::class,
         'AppConstants' => App\Helpers\AppConstants::class,
+        'UserRole' => App\Helpers\UserRole::class,
     ],
 
 ];
